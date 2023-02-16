@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>голосование</title>
+</head>
+<body>
+    <h2>User form</h2>
+    <form method="post" action="postuser/">
+        {% csrf_token %}
+        <table>
+
+            {% for field in form %}
+                <div class="form-group">
+                    {{field.label_tag}}
+                    <div>{{field}}</div>
+                </div>
+            {% endfor %}
+
+        </table>
+        <input type="submit" value="Проголосовать" >
+    </form>
+</body>
+</html>
