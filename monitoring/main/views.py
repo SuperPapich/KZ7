@@ -1,15 +1,20 @@
 from django.shortcuts import render, HttpResponse, redirect
 from .forms import UserForm
+from .models import Person
 
 
 def index(request):
-    return redirect(voting)
+    return render(request, "index.html")
 
 
 def postuser(request):
-    name = request.POST.get("name")
-    age = request.POST.get("age")
-    return HttpResponse(f"<h2>Привет, {name}, твой возраст: {age}</h2>")
+    name = request.POST.get("fio")
+    age = int(request.POST.get("age"))
+    vote = int(request.POST.get("radioButton"))
+
+    new_vote = Person.objects.create(name=name, age=age, vote=vote)
+
+    return redirect(results)
     
 
 
@@ -19,6 +24,7 @@ def voting(request):
 
  
 def results(request):
-    return render(request, "results.html")
+    data = Person.objects.all()
+    return render(request, "results.html", {"data": data})
 
 

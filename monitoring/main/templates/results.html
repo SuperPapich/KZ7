@@ -1,10 +1,34 @@
 <!DOCTYPE html>
+{% extends 'base.html' %}
+
 <html>
 <head>
     <meta charset="utf-8" />
+    
+
+
     <title>Результаты</title>
 </head>
 <body>
-    <h1>Результаты</h1>
-</body>
+    
+
+
+    {% block body %}
+    <div class="container" style="background-color: #F8F9FA; margin-top: 1%;">
+        <h3>Результаты</h3>
+
+        {% csrf_token %}
+        <table>
+
+            {% for person in data %}
+                <h1>{{ person.vote }}</h1>
+            {% endfor %}
+
+        </table>
+    
+    
+    </div>
+    {% endblock %}
+    
+    </body>
 </html>

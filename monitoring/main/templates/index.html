@@ -1,12 +1,114 @@
 <!DOCTYPE html>
-{% load static %}
+{% extends 'base.html' %}
+
 <html>
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="{% static "css/styles.css" %}" />
+    
+
+
     <title>главная страница</title>
 </head>
 <body>
-    <h1>Дефолтная страница</h1>
-</body>
+    
+
+
+    {% block body %}
+    <div class="container" style="background-color: #F8F9FA; margin-top: 1%;">
+        <h3>Новости</h3>
+
+    
+
+    <!-- News -->
+    <a href="" class="text-dark">
+        <div class="row mb-4 border-bottom pb-2">
+          <div class="col-3">
+            <img src="https://i.ytimg.com/vi/kNCINxn5aT0/maxresdefault.jpg"
+              class="img-fluid shadow-1-strong rounded" alt="Best film" />
+          </div>
+  
+          <div class="col-9">
+            <p class="mb-2"><strong>Начинается голосование в номинации "Большая немецкая тройка"</strong></p>
+            <p>
+              <u> 18.02.2023</u>
+            </p>
+          </div>
+        </div>
+      </a
+
+
+    <!-- News -->
+    <a href="" class="text-dark">
+        <div class="row mb-4 border-bottom pb-2">
+          <div class="col-3">
+            <img src="https://images.kinorium.com/movie/poster/413328/w1500_50284582.jpg"
+              class="img-fluid shadow-1-strong rounded" alt="Wolf" />
+          </div>
+  
+          <div class="col-9">
+            <p class="mb-2"><strong>В номинации "Любимый фильм" победу одерживает "Волк с Уолл-стрит"</strong></p>
+            <p>
+              <u> 07.02.2023</u>
+            </p>
+          </div>
+        </div>
+      </a>
+  
+      <!-- News -->
+      <a href="" class="text-dark">
+        <div class="row mb-4 border-bottom pb-2">
+          <div class="col-3">
+            <img src="https://www.1c-interes.ru/images/2019/01/27663306_club_brad_pitt.jpg"
+              class="img-fluid shadow-1-strong rounded" alt="Best film" />
+          </div>
+  
+          <div class="col-9">
+            <p class="mb-2"><strong>Начинается голосование в номинации "Любимый фильм"</strong></p>
+            <p>
+              <u> 02.02.2023</u>
+            </p>
+          </div>
+        </div>
+      </a>
+  
+      <!-- News -->
+      <a href="" class="text-dark">
+        <div class="row mb-4 border-bottom pb-2">
+          <div class="col-3">
+            <img src="https://phonoteka.org/uploads/posts/2021-03/1616678818_40-p-gitara-fon-46.jpg"
+              class="img-fluid shadow-1-strong rounded" alt="Guitar" />
+          </div>
+  
+          <div class="col-9">
+            <p class="mb-2"><strong>В номинации "Любимый музыкальный инструмент" победу одерживает Гитара</strong></p>
+            <p>
+              <u> 01.02.2023</u>
+            </p>
+          </div>
+        </div>
+      </a>
+
+    
+      <!-- News -->
+      <a href="" class="text-dark">
+        <div class="row mb-4 border-bottom pb-2">
+          <div class="col-3">
+            <img src="https://d1urgxgdb4lky3.cloudfront.net/wp-content/uploads/2020/05/iStock-97748124.jpg"
+              class="img-fluid shadow-1-strong rounded" alt="Best instrument" />
+          </div>
+  
+          <div class="col-9">
+            <p class="mb-2"><strong>Начинается голосование в номинации "Любимый музыкальный инструмент"</strong></p>
+            <p>
+              <u> 25.01.2023</u>
+            </p>
+          </div>
+        </div>
+      </a>
+    
+    
+    </div>
+    {% endblock %}
+    
+    </body>
 </html>

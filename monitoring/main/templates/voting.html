@@ -1,24 +1,84 @@
 <!DOCTYPE html>
+{% extends 'base.html' %}
+
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>голосование</title>
+    <title>Голосование</title>
 </head>
 <body>
-    <h2>User form</h2>
-    <form method="post" action="postuser/">
-        {% csrf_token %}
-        <table>
+    
 
-            {% for field in form %}
-                <div class="form-group">
-                    {{field.label_tag}}
-                    <div>{{field}}</div>
+
+    {% block body %}
+    <div class="container" style="background-color: #F8F9FA; margin-top: 1%;">
+        <h3>Голосование</h3>
+
+
+        <form method="post" action="postuser/">
+            {% csrf_token %}
+            <table>
+    
+                <div class="text-center">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/ab6e4840210505.577604b545dbb.jpg" class="img-fluid" alt="Responsive image">
                 </div>
-            {% endfor %}
+                
+               
+                
+                
+                <div class="row col-5">
+                    <h4 class="fw-bold text-center mt-3"></h4>
+                    <form class=" bg-white px-4" action="">
+                      <p class="fw-bold">How satisfied are you with our product?</p>
+                      <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" name="radioButton" id="radioButton1" value="1" />
+                        <label class="form-check-label" for="radioButton1">
+                          BMW
+                        </label>
+                      </div>
+                      <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" name="radioButton" id="radioButton2" value="2" />
+                        <label class="form-check-label" for="radioButton2">
+                          Mercedes
+                        </label>
+                      </div>
+                      <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" name="radioButton" id="radioButton3" value="3" />
+                        <label class="form-check-label" for="radioButton3">
+                          Audi
+                        </label>
+                      </div>
+                    </form>
+                    
+                  </div>
+    
+    
+                
+                <table>
+    
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingProject" placeholder="FIO" name="fio" maxlength="40" required>
+                        <label for="floatingProject">ФИО</label>
+                    </div>
+    
+                    <div class="form-floating mb-3">
+                        <input type="number" class="form-control" id="floatingProject" placeholder="age" name="age" step="1" min="1" max="99" required>
+                        <label for="floatingProject">Возраст</label>
+                    </div>
+        
+                   
+                </table>
+    
+            </table>
+            <input type="submit" value="Проголосовать" >
+        </form>
 
-        </table>
-        <input type="submit" value="Проголосовать" >
-    </form>
-</body>
+
+        
+    
+    
+    </div>
+    {% endblock %}
+    
+    </body>
 </html>
