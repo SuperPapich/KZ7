@@ -1,9 +1,9 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from .forms import UserForm
 
 
 def index(request):
-    return render(request, "index.html")
+    return redirect(voting)
 
 
 def postuser(request):
