@@ -1,6 +1,41 @@
 {% load static %}
 <head>
     <meta charset="UTF-8">
+
+    <script type="text/javascript">
+      window.onload = function() {
+
+        bmw_count = $('#bmw_count').val()
+        mercedes_count = $('#mercedes_count').val()
+        audi_count = $('#audi_count').val()
+        
+
+
+          var options = {
+              title: {
+                  text: "Состояние в текущем голосовании"
+              },
+              data: [{
+                      type: "pie",
+                      startAngle: 45,
+                      showInLegend: "true",
+                      legendText: "{label}",
+                      indexLabel: "{label} ({y})",
+                      yValueFormatString:"#,##0.#"%"",
+                      dataPoints: [
+                          { label: "BMW", y: bmw_count },
+                          { label: "Mercedes", y: mercedes_count },
+                          { label: "Audi", y: audi_count },
+                      ]
+              }]
+          };
+          $("#chartContainer").CanvasJSChart(options);
+      
+      }
+      </script>
+
+
+
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -20,7 +55,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" ></a>
+    <a class="navbar-brand" >Golosovanie.ru</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -64,6 +99,7 @@
 </footer>
 
 
-
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>  
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
 </body>
 </html>
